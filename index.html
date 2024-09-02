@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="login-container" class="container">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" id="password" placeholder="Password">
+        <button class="btn" onclick="checkLogin()">Login</button>
+        <p id="login-message"></p>
+        <button class="btn" onclick="displayRegisterForm()">Register</button>
+    </div>
+    
+    <div id="register-container" class="container" style="display:none;">
+        <h2>Register</h2>
+        <input type="text" id="new-username" placeholder="New Username">
+        <input type="password" id="new-password" placeholder="New Password">
+        <select id="user-role">
+            <option value="member">Member</option>
+            <option value="staff">Staff Member</option>
+        </select>
+        <button class="btn" onclick="registerUser()">Register User</button>
+        <p id="register-message"></p>
+    </div>
+
+    <div id="staff-actions" class="container" style="display:none;">
+        <h2>Staff Actions</h2>
+        <ul>
+            <li><button class="btn" onclick="displayReportForm()">Report Issue</button></li>
+            <li><button class="btn" onclick="manageUsers()">Manage Users</button></li>
+            <li><button class="btn" onclick="generateInvoices()">Generate Invoices</button></li>
+        </ul>
+        <div id="report-form" style="display:none;">
+            <h3>Report an Issue</h3>
+            <textarea id="report-text" placeholder="Describe the issue..."></textarea><br>
+            <button class="btn" onclick="submitReport()">Submit Report</button>
+            <p id="report-message"></p>
+        </div>
+        <h3>Submitted Reports</h3>
+        <ul id="report-list"></ul>
+    </div>
+
+    <div id="user-management" class="container" style="display:none;">
+        <h3>User Management</h3>
+        <ul id="user-list"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
